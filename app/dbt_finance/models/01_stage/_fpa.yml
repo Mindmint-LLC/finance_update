@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: fpa
+    database: bbg-platform
+    schema: fpa
+    tables:
+      - name: stg_netsuite
+      - name: stg_netsuite__chart_of_accounts
+      - name: stg_netsuite_bs_202212

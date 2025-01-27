@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: dim_acct
+    columns:
+      - name: Account
+        data_tests:
+          - unique
+          - not_null
+  - name: dim_dept
+    columns:
+      - name: Dept
+        data_tests:
+          - unique
+          - not_null

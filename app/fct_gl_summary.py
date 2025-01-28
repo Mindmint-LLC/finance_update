@@ -32,7 +32,8 @@ from fpa.fct_gl__summary''')
 
 
 url = "https://docs.google.com/spreadsheets/d/1_knhmDRaQWrcFfhbywHv-O0rCQ-VhBdb18wNRQdSvZI/edit?gid=2013706554#gid=2013706554"
-filepath_cred='./volume/bigquery-bbg-platform.json'
+
+filepath_cred=os.getenv('DBT_KEYFILE')
 
 
 logger.info('Sending to gsheet')

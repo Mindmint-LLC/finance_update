@@ -5,7 +5,6 @@ python load_netsuite.py
 cd dbt_finance
 dbt build
 
-echo "Sending GL to GSheet"
 cd ..
 python fct_gl_summary.py
 

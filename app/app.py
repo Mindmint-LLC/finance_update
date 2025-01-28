@@ -4,7 +4,6 @@ import subprocess
 import threading
 import queue
 from flask import Flask, render_template, Response
-from datetime import datetime
 from _tools import login_required
 import _google_oauth
 
@@ -29,8 +28,7 @@ def run_process(command):
     )
     def enqueue_output(pipe, prefix=''):
         for line in iter(pipe.readline, ''):
-            timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            output_queue.put(f'[{timestamp}] {prefix}{line.strip()}')
+            output_queue.put(line.strip())
         pipe.close()
     stdout_thread = threading.Thread(target=enqueue_output, args=(process.stdout,), daemon=True)
     stderr_thread = threading.Thread(target=enqueue_output, args=(process.stderr, 'ERROR: '), daemon=True)

@@ -49,6 +49,7 @@ grpcio==1.68.0
 grpcio-status==1.68.0
 gspread==6.1.4
 gspread-dataframe==4.0.0
+gunicorn==23.0.0
 httplib2==0.22.0
 idna==3.10
 importlib-metadata==6.11.0

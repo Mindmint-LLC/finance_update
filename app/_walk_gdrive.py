@@ -11,7 +11,6 @@ import dlogging
 logger = dlogging.NewLogger(__file__, use_cd=True)
 
 
-logger.info('Beginning gdrive walk')
 SERVICE_ACCOUNT_FILE = os.getenv('DBT_KEYFILE')
 SCOPES = ['https://www.googleapis.com/auth/drive']
 
@@ -50,6 +49,7 @@ def csv_to_dataframe(file_id):
 #%%
 
 def main():
+    logger.info('Beginning gdrive walk')
     file_list = []
     df = pd.DataFrame()
     folder_list = folder_contents(folder_id)

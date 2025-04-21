@@ -32,7 +32,7 @@ with base as (
 )
 
 , accts as (
-    select distinct b.Company
+    select b.Company
         , b.Account
         , b.Account_Name
         , b.Account_Type
@@ -42,6 +42,7 @@ with base as (
         , b.SubCategory1
         , b.SubCategory2
     from summarized b
+    qualify row_number() over (partition by b.Company, b.Account order by b.Effective_Date desc) = 1
 )
 
 , combined as (

@@ -4,6 +4,9 @@ SELECT row_number() over () as pk
     , cast(left(n.Account, 6) as int) as Account
     , cast(case when n.Account like '%-%' then right(n.Account, 2) end as int) as Dept
     , n.Account_Name
+    , n.Class
+    , n.Description
+    , n.Memo
     , cast(n.Effective_Date as date) as Effective_Date
     , last_day(cast(n.Posted_Date as date)) as PostedEOM
     , n.Company

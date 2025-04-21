@@ -26,6 +26,9 @@ with base as (
         , case when a.Category >= 5 then '2 - Cash Expense'
             when a.Category = 4 then '1 - Cash Revenue'
             else c.Category_CashIS end as Category_CashIS
+        , b.Class
+        , b.Description
+        , b.Memo
     FROM {{ ref('stg_netsuite_mod') }} b
         join {{ ref('dim_acct') }} a
             on b.Account = a.Account

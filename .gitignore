@@ -2,7 +2,6 @@
 volume/
 logs/
 __pycache__
-test*
 archive/
 target/
 dbt_packages/

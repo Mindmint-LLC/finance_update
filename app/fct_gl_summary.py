@@ -27,7 +27,9 @@ select Effective_Date,
     Cash_Type,
     AmountCF,
     PostedEOM,
-    Category_CashIS
+    Category_CashIS,
+    Class,
+    Vendor
 from fpa.fct_gl__summary''')
 
 

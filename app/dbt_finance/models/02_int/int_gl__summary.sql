@@ -16,6 +16,8 @@
         , g.yr
         , g.mnth
         , g.Category_CashIS
+        , g.Class
+        , case when g.Description like 'V%' then g.Description else null end as Vendor
     from {{ ref('int_gl') }} g
     where g.Account not in (480005)
     group by all
